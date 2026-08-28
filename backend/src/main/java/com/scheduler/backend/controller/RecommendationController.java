@@ -1,6 +1,6 @@
 package com.scheduler.backend.controller;
 
-import com.scheduler.backend.dto.CandidateResponseDto;
+import com.scheduler.backend.dto.RankedCandidateResponseDto;
 import com.scheduler.backend.service.RecommendationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +20,7 @@ public class RecommendationController {
     private final RecommendationService recommendationService;
 
     @GetMapping("/shifts/{shiftId}/candidates")
-    public ResponseEntity<List<CandidateResponseDto>> getCandidates(@PathVariable UUID shiftId) {
-        return ResponseEntity.ok(recommendationService.getCandidatesForShift(shiftId));
+    public ResponseEntity<List<RankedCandidateResponseDto>> getCandidates(@PathVariable UUID shiftId) {
+        return ResponseEntity.ok(recommendationService.getRankedCandidatesForShift(shiftId));
     }
 }

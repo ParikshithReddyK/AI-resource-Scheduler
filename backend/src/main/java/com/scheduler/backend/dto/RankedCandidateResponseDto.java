@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
@@ -14,10 +15,13 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CandidateResponseDto {
-
+public class RankedCandidateResponseDto {
     private UUID employeeId;
     private String fullName;
     private String department;
     private Set<String> skillNames;
+    private int workloadCount;
+    private int daysSinceLastAssignment;
+    private double score;
+    private Map<String, Double> explanation;
 }
